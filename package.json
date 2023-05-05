@@ -1,0 +1,20 @@
+{
+  "name": "mapcourse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samueldesalegn/mapCourse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samueldesalegn/mapCourse/issues"
+  },
+  "homepage": "https://github.com/samueldesalegn/mapCourse#readme"
+}
