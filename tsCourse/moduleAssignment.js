@@ -16,7 +16,7 @@ const shoppingCart = (function() {
 	
 	},
 	getItemsCount() {
-		console.log(basket.length);
+		return basket.length;
 	// console.log("counter value prior to reset: " + counter);
 	// counter = 0;
 	}, 
