@@ -179,3 +179,28 @@ let rectangle = new Rectangle(5, 2);
 console.log(rectangle.calcSize());
 
 
+let str = "Hello world";
+
+
+interface IEmployee {
+	empCode: number;
+	empName: string;
+	setEmpName(name: string): void;
+	getEmpName: () => string;
+	}
+
+	let em = {
+		empCode: 1001,
+		empName: 'John',
+		setEmpName: function (name: string): void {
+		this.empName = name;
+		},
+		getEmpName: function () {
+		return this.empName;
+		}
+		}
+		em.setEmpName('Edward');
+		console.log(em.getEmpName())
+
+
+
