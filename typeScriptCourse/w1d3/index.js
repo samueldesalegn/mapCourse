@@ -30,3 +30,17 @@ var Color3;
 })(Color3 || (Color3 = {}));
 ;
 console.log(Color.Green);
+let message = "Hello";
+var week;
+(function (week) {
+    week[week["Monday"] = 0] = "Monday";
+    week[week["Tuesday"] = 1] = "Tuesday";
+    week[week["Wednesday"] = 2] = "Wednesday";
+    week[week["Thursday"] = 3] = "Thursday";
+    week[week["Friday"] = 4] = "Friday";
+    week[week["Saturday"] = 5] = "Saturday";
+    week[week["Sunday"] = 6] = "Sunday";
+})(week || (week = {}));
+
+let day = week.Monday;
+console.log(day);

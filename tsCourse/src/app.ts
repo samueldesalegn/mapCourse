@@ -55,7 +55,7 @@ let bankAccount: BankAccount = {
 	} 
 }; 
 
-let myself: {name: string; bankAccount: BankAccount; hobbies: string[]} = { 
+let myself: {name: string; bankAccount: BankAccount; hobbies: [string, string]} = { 
 	name: "John", 
 	bankAccount: bankAccount, 
 	hobbies: ["Violin", "Cooking"] 
@@ -200,7 +200,26 @@ interface IEmployee {
 		}
 		}
 		em.setEmpName('Edward');
-		console.log(em.getEmpName())
+		console.log(em.getEmpName());
+
+
+class Courses {
+		constructor(protected name: string) {}
+}
+
+class MapCourses extends Courses {
+	details: string;
+	constructor(name: string, public dept: string) {
+		console.log(`${name} ${dept}`);
+		super(name);
+		this.details = `${dept} - ${this.name}`;
+	}
+}
+
+let app = new MapCourses("MAP", "CS");
+
+
+
 
 
 

@@ -1,36 +1,35 @@
-const shoppingCart = (function() {
+const shoppingCart = (function () {
 	let basket = [];
 	return {
-	upsertItem(item) {
-		// for (const elem of basket) {
-		if (!basket.includes(item)) {
-			basket.push(item);
-		} else {
-			for (const elem of basket) {
-				if (elem.id === item.id){
-				basket[elem] = item;
+		upsertItem(item) {
+			// for (const elem of basket) {
+			if (!basket.includes(item)) {
+				basket.push(item);
+			} else {
+				for (const elem of basket) {
+					if (elem.id === item.id) {
+						basket[elem] = item;
+					}
+				}
 			}
-		}
+		},
+		getItemsCount() {
+			return basket.length;
+			// console.log("counter value prior to reset: " + counter);
+			// counter = 0;
+		},
+		getTotalPrice() {
+			let total = 0;
+			for (const elem of basket) {
+				total += elem.product.price * elem.count;
+			}
+			return total;
+		},
+		removeItemById(id) {
+			let index = basket.findIndex(x => x.id === id);
+			basket.splice(index, 1);
 		}
 		
-	
-	},
-	getItemsCount() {
-		return basket.length;
-	// console.log("counter value prior to reset: " + counter);
-	// counter = 0;
-	}, 
-	getTotalPrice() {
-		let total = 0;
-		for (const elem of basket) {
-			total += elem.product.price * elem.count;
-		}
-		return total;
-	},
-	removeItemById(id) {
-		let index = basket.findIndex(x => x.id === id);
-		basket.splice(index, 1);
-	}
 	};
 })();
 
@@ -56,4 +55,4 @@ console.log(shoppingCart.getItemsCount()); //Expected Result: 2
 console.log(shoppingCart.getTotalPrice()); //Expected Result: 309
 
 
-	
+

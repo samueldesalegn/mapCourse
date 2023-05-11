@@ -1,30 +1,26 @@
 /* eslint-disable require-jsdoc */
 class Subject {
-	
 	constructor() {
-		this.observer = {};
+		this.obesrvers = {};
 	}
 
-	
-on(event, fn) {
-	if (this.observer[event]) {
-		this.observer[event].push(fn);
-	}else {
-
-		this.observer[event] = [fn];
+	on(event, fn) {
+		if (this.obesrvers[event]) {
+			this.obesrvers[event].push(fn);
+		}else {
+			this.obesrvers[event] = [fn];
+		}
 	}
-	
+
+	emit(event, msg) {
+		this.obesrvers[event].forEach(ob =>ob(msg));
+	}
 }
 
-emit(event, msg){
-	this.observer[event].forEach(ob=> ob(msg));
-}
 
 
-	
-   
-}
- 
+
+
 const subject = new Subject();
 subject.on('eat', console.log); // register an observer
 subject.on('study', console.log); // register an observer

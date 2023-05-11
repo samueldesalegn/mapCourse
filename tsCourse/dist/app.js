@@ -3,7 +3,7 @@
 // Re-write the following code using TypeScript. 
 // Try to be as explicit as possible and add Types to everything you can. 
 // When you are done, transpile the TS code to JS code and inspect the JS code.
-// Option 1
+// Option 1.1
 /*
 
 class University {
@@ -18,11 +18,11 @@ class University {
     }
 }
 
-let miu = new University("MIU", "MSD");
+let miu: University = new University("MIU", "MSD");
 miu.graduation(2021);
 
 */
-// Option 2
+// Option 1.2
 class University {
     constructor(name, dept) {
         this.name = name;
@@ -47,7 +47,7 @@ let myself = {
 };
 myself.bankAccount.deposit(3000);
 console.log(myself);
-// Option2 using abstract class
+// Option 2.2 using abstract class
 // abstract class BankAccount {
 // 	money: number;
 // 	constructor(money: number) {
@@ -82,7 +82,6 @@ console.log(myself);
 // When you are done, transpile the TS code to JS code and inspect the JS code.
 class Car {
     constructor(name) {
-        this.acceleration = 0;
         this.name = name;
         this.acceleration = 0;
     }
@@ -113,7 +112,7 @@ console.log(car.acceleration); // 60
 // 	return this.width * this.length; 
 // }; 
 // console.log(rectangle.calcSize()); // 10
-// //Option 1
+// //Option 4.1
 // class Rectangle {
 // 	constructor(public width: number =0, public length: number = 0){}
 // 	calcSize (): number {
@@ -122,7 +121,7 @@ console.log(car.acceleration); // 60
 // }
 // let rectangle = new Rectangle(5, 2);
 // console.log(rectangle.calcSize());
-// Option 2
+// Option 4.2
 class Rectangle {
     constructor(width, length) {
         this.width = 0;
@@ -136,3 +135,41 @@ class Rectangle {
 }
 let rectangle = new Rectangle(5, 2);
 console.log(rectangle.calcSize());
+let str = "Hello world";
+let em = {
+    empCode: 1001,
+    empName: 'John',
+    setEmpName: function (name) {
+        this.empName = name;
+    },
+    getEmpName: function () {
+        return this.empName;
+    }
+};
+em.setEmpName('Edward');
+console.log(em.getEmpName());
+class Courses {
+    constructor(name) {
+        this.name = name;
+    }
+}
+class MapCourses extends Courses {
+    constructor(name, dept) {
+        console.log(`${name} ${dept}`);
+        super(name);
+        this.details = `${dept} - ${this.name}`;
+    }
+}
+var week;
+(function (week) {
+    week[week["Monday"] = 0] = "Monday";
+    week[week["Tuesday"] = 1] = "Tuesday";
+    week[week["Wednesday"] = 2] = "Wednesday";
+    week[week["Thursday"] = 3] = "Thursday";
+    week[week["Friday"] = 4] = "Friday";
+    week[week["Saturday"] = 5] = "Saturday";
+    week[week["Sunday"] = 6] = "Sunday";
+})(week || (week = {}));
+;
+let day = week.Monday;
+console.log(day);
