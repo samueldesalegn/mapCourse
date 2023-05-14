@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button id="locationBtn">Geolocation</button>
+	<div id="display"></div>
+
+	<script>
+		document.getElementById('locationBtn').onclick = function() {
+			navigator.geolocation.getCurrentPosition(success, fail);
+		}
+
+		function success(position){
+			document.getElementById('display').innerHTML = `
+				${position.coords.latitude}, ${position.coords.longitude}
+			`;
+		}
+		
+		function fail(err){
+			document.getElementById('display').innerHTML = `
+				${err.code}, ${err.message}
+			`;
+		}
+
+
+	</script>
+</body>
+</html>

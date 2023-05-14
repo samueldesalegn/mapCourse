@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dom</title>
+	<style>
+		.special {
+			background-color: blue;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<h2>DOM Practice</h2>
+	<div id="dom"></div>
+	<p>This is</p>
+	<p>CS445</p>
+	<p>Modern Async Programming</p>
+
+	<script >
+		const domColl = document.getElementsByTagName('p');
+		for (let i = 0; i < domColl.length; i++) {
+			domColl[i].className = 'special'
+			
+		}
+	</script>
+</body>
+</html>

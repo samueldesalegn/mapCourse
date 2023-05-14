@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Welcome to MSD Department</h1>
+	<a href="index.html">MIU</a>
+	<a href="445.html">SD445</a>
+
+	<div>
+		<button id="back">Back</button>
+		<button id="forward">Forward</button>
+	</div>
+
+	<script>
+
+		document.getElementById('back').onclick = function(){
+			history.back();
+		}
+		
+		document.getElementById('forward').onclick = function(){
+			history.forward();
+		}
+
+	</script>
+	
+</body>
+</html>

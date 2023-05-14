@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn1">Click Me1</button>
+	<button id="btn2">Click Me2</button>
+	<button id="btn3">removebtns</button>
+	<div id="box"></div>
+
+	<script>
+		// const btn = document.getElementsByTagName('button');
+		// for (let i = 0; i < btn.length; i++) {
+		// 	btn[i].addEventListener('click', ()=>console.log(btn[i].innerHTML));
+			
+		// }
+		const btn1 = document.getElementById('btn1');
+		// const btn2 = document.getElementById('btn2');
+		function eventhandler() {
+			console.log("click me1")
+		}
+		// btn2.addEventListener('click', eventhandler);
+		
+		btn1.addEventListener('click', eventhandler);
+		document.getElementById("btn3").onclick = function(){
+			btn1.removeEventListener('click', eventhandler);
+
+	}
+
+
+	</script>
+</body>
+</html>

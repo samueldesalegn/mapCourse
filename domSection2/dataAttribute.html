@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h2>HTML Table</h2>
+
+<table>
+  <tr>
+		<th>ID</th>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+		<th>ACTION</th>
+  </tr>
+  <tr id="tr61001">
+		<td>61001</td>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+		<td><button data-id="61001">Delete</button></td>
+  </tr>
+  <tr id="tr61030">
+		<td>61030</td>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+		<td><button data-id="61030">Delete</button></td>
+  </tr>
+  <tr id="tr61007">
+		<td>61007</td>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+		<td><button data-id="61007">Delete</button></td>
+  </tr>
+  <tr id="tr61005">
+		<td>61005</td>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+		<td><button data-id="61005">Delete</button></td>
+  </tr>
+  <tr id="tr61011">
+		<td>61011</td>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+		<td><button data-id="61011">Delete</button></td>
+  </tr>
+  <tr id="tr61021">
+		<td>61021</td>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+		<td><button data-id="61021">Delete</button></td>
+  </tr>
+</table>
+
+<script>
+	const deleteBtns = document.getElementsByTagName('button');
+	for (let i = 0; i < deleteBtns.length; i++) {
+		deleteBtns[i].onclick = function() {
+			document.getElementById(`tr${this.dataset.id}`).remove();
+		}
+		
+	}
+</script>
+</body>
+</html>

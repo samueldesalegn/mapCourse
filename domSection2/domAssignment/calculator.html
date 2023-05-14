@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Calculator</title>
+</head>
+<body>
+	<h1>Simple Calculator</h1>
+
+	<input id="input1" type="number" value="">
+	<select name="" id="operator">
+		<option value="">+</option>
+		<option value="">-</option>
+		<option value="">*</option>
+		<option value="">/</option>
+	</select>
+	<input id="input2" type="number" value="">
+	
+	<input id="input3" type="number" value="">
+	<button id="btn">submit</button>
+
+	<script>
+		document.getElementById('btn').onclick = function() {
+			let select = document.getElementById('operator');
+			let option = select.options[select.selectedIndex].innerHTML; 
+			
+			let value2 = +document.getElementById('input2').value;
+			console.log(value2);
+			let value1 = +document.getElementById('input1').value;
+			console.log(value1);
+
+
+			if (option === "+" ) {
+				document.getElementById('input3').value = value1 + value2;
+			}else if(option === "-") {
+				document.getElementById('input3').value = value1 - value2;
+			}else if(option === "*") {
+				document.getElementById('input3').value = value1 * value2;
+			}else {
+				document.getElementById('input3').value = value1/value2;
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<img id="lion" src="lions.jpg" alt="lion" style="width:60px; height: 60px"/>
+	<img id="girl" src="girl.jpg" alt="girl" style="width:60px; height: 60px"/>
+	<button id="btn">Swap</button>
+
+	<script>
+
+		let lion = document.getElementById('lion');
+		let girl = document.getElementById('girl');
+		document.getElementById('btn').onclick = function() {
+			let temp = lion.src;
+			
+			lion.src = girl.src;
+			girl.src = temp;
+		}
+
+
+	</script>
+</body>
+</html>

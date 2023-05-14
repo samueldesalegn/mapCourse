@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">Click Me 1</button>
+    <button id="btn2">Click Me 2</button>
+
+    <button id="removeListenerBtn2">Remove Listener for Button 2</button>
+
+    <script>
+        const btn1 = document.getElementById('btn1');
+        btn1.onclick = function () {
+            console.log('Click Me 1.....');
+        }
+
+        const btn2 = document.getElementById('btn2');
+
+        function eventHanlder() {
+            console.log('Click Me....');
+        }
+
+        btn2.addEventListener('click', eventHanlder);
+
+        document.getElementById('removeListenerBtn2').onclick = function () {
+
+            btn2.removeEventListener('click', eventHanlder);
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
