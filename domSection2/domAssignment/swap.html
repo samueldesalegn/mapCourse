@@ -15,11 +15,21 @@
 
 		let lion = document.getElementById('lion');
 		let girl = document.getElementById('girl');
+
 		document.getElementById('btn').onclick = function() {
+			//Option1
+
+			/**
+			 
 			let temp = lion.src;
-			
 			lion.src = girl.src;
 			girl.src = temp;
+
+			 */
+
+
+			// optionally, I can also swap as below:
+			[lion.src, girl.src] = [girl.src, lion.src];
 		}
 
 
