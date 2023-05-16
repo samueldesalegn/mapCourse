@@ -1,29 +1,29 @@
 // /* eslint-disable no-undef */
 const Student = (function(){
-		const lname = "";
-		const fname = "";
+	let firstname = "";
+	let lastname = "";
+	let grade = [];
 		
 		return {
-			grade: [],
 			student(fname, lname) {
-				this.fname = fname;
-				this.lname = lname;
-				this.grade = [];
+				firstname = fname;
+				lastname = lname;
+				grade = [];
 			},
 			getAverageGrade() {
 				let total = 0;
-				for (const elem of this.grade) {
+				for (const elem of grade) {
 					total += elem;
 				}
-				let avg = total/this.grade.length;
+				let avg = total/grade.length;
 				// let avg = this.grade.reduce((accm, curr) => (accm + curr)/this.grade.length);
 				return avg;
 			},
 			enterGrade(val) {
-				this.grade.push(val);
+				grade.push(val);
 			},
 			getStudentInfo() {
-				return `${this.fname} ${this.lname}: ${this.getAverageGrade()}`;
+				return `${firstname} ${lastname}: ${this.getAverageGrade()}`;
 				
 			}
 			
