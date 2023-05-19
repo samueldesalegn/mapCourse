@@ -6,21 +6,12 @@ window.onload = function () {
 };
 
 
-
-
-
 async function createEmployees(num) {
 	let response = await fetch(`https://randomuser.me/api/?results=${num}`);
 	let data = await response.json();
-	// console.log(data.results);
 
 	let div = document.getElementById("emplist");
-	// document.getElementById("img0").src = data.results[0].picture.large;
-	// document.getElementById("name0").innerHTML = `${data.results[0].name.first} ${data.results[0].name.last}`;
-	// document.getElementById("phone0").innerHTML = `phone: ${data.results[0].phone}`;
-	// document.getElementById("email0").innerHTML = data.results[0].email;
-	
-	
+		
 	div.innerHTML = "";
 	for (const elem of data.results) {
 		div.innerHTML += 
@@ -36,11 +27,5 @@ async function createEmployees(num) {
 		</div>`;
 		
 	}
-	
-	
-
-		
-			
-
 }
 
