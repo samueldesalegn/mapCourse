@@ -1,11 +1,12 @@
 {
   "name": "mapcourse",
   "version": "1.0.0",
-  "description": "",
+  "description": "Markdown | Less | Pretty\r --- | --- | ---\r *Still* | `renders` | **nicely**\r 1 | 2 | 3",
   "main": "order.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js"
   },
   "repository": {
     "type": "git",
