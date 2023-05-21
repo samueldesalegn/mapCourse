@@ -1,13 +1,12 @@
 /* eslint-disable require-jsdoc */
 window.onload = function () {
-  // init();
+
   document.getElementById("loginBtn").onclick = login;
-  // fetchAllSongs();
   document.getElementById("search").onclick = function() {
     let song = document.getElementById("elem").value;
     searchSongs(song);
-    document.getElementById("logoutBtn").onclick = logout;
   };
+  document.getElementById("logoutBtn").onclick = logout;
   
 };
 
@@ -47,14 +46,38 @@ async function login(){
   
 }
 
-function init() {
-  document.getElementById("username").innerText = `Welcome to ${sessionStorage.getItem("username")} Music World`;
+// *****************************Search *******************************************
+async function searchSongs(song) {
+  let response = await fetch(`http://localhost:3000/api/music?search=${song}`, { 
+  headers: {
+    Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+  },
+});
+let result = await response.json();
+for (const elem of result) {
+  let myHtml = `
+          <tr>
+          <td><a href="${result.url}">${elem.title}</a><br></td>
+          <td><button class="addBtn" id=${elem.id} onclick="addToFavorites('${elem.id}')">+</button></td>
+          </tr>
+         `;
+        document.getElementById("playlist").innerHTML = myHtml; 
+  
 }
+
+}
+
 
 function logout() {
   sessionStorage.removeItem("username");
   sessionStorage.removeItem("token");
-  location.href = "login.html";
+  // location.href = "#";
+  document.getElementById("logout").style.display = "none";
+  document.getElementById("login").style.display = "block";
+  document.getElementById("header").style.display = "none";
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("thankyou").innerHTML = "THANK YOU FOR WATCHING";
+
 }
 
 let generalList = null;
@@ -347,27 +370,7 @@ repeat.onclick = async function () {
   }
 };
 
-// *****************************Search *******************************************
-async function searchSongs(song) {
-  let response = await fetch(`http://localhost:3000/api/music?search=${song}`, { 
-  headers: {
-    Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-  },
-});
-let result = await response.json();
-console.log("here", result);
-for (const elem of result) {
-  let myHtml = `
-          <tr>
-          <td><a href="${result.url}">${elem.title}</a><br></td>
-          <td><button class="addBtn" id=${elem.id} onclick="addToFavorites('${elem.id}')">+</button></td>
-          </tr>
-         `;
-        document.getElementById("playlist").innerHTML = myHtml; 
-  
-}
 
-}
 
 
 
