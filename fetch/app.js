@@ -17,12 +17,12 @@ async function createEmployees(num) {
 		div.innerHTML += 
     `<div class="row border-top" style="gap: 1px; display: grid; grid-template-columns: 1fr 1fr;" >
 			<div class="col">
-				<img id="img0" src="${elem.picture.large}" alt="">
+				<img id="" src="${elem.picture.large}" alt="">
 			</div>
 			<div class="col">
-				<h3 id="name0">${elem.name.first} ${elem.name.last}</h3>
-				<p id="phone0">phone: ${elem.phone}</p>
-				<p id="email0">${elem.email}</p>
+				<h3 id="">${elem.name.first} ${elem.name.last}</h3>
+				<p id="">phone: ${elem.phone}</p>
+				<p id="">${elem.email}</p>
 			</div>
 		</div>`;
 		

@@ -1,0 +1,39 @@
+#errorMsg {
+    color: red;
+}
+table,th,tr,td{
+    border: solid 2px;
+
+}
+tr:nth-child(even) {background-color: #da2727;}
+tr:hover {background-color: rgb(80, 182, 255);}
+
+table{
+    width: 100%;
+}
+.addBtn{
+    width: 100%;
+}
+#play{
+    width: 100%;
+}
+#repeat,#shuffle {
+    border-radius: 50px;
+}
+#username, #password, #loginBtn{
+    color: brown;
+    font-weight: bold;
+    /* margin-top: 25px; */
+    background-color: antiquewhite;
+}
+#bdy{
+    /* margin-top: 25px; */
+    background-image: url('logout.jpg');
+    background-color: black;
+}
+#displayPlay{
+    /* margin-top: 25px; */
+    /* background-color: antiquewhite; */
+    background-image: url('background.jpg');
+    
+}

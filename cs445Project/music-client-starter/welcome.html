@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music World</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body id="displayPlay">
+    <div id="main-content" style=" gap: 1px; display: grid; grid-template-columns: 2fr 0.2fr 0.2fr 0.3fr 0.2fr ; border-top: 0px; background-color: gray;">
+        <img srcset="https://img.icons8.com/?size=2x&amp;id=dXkd1xqlnOsD&amp;format=png 2x, https://img.icons8.com/?size=1x&amp;id=dXkd1xqlnOsD&amp;format=png 1x" src="https://img.icons8.com/?size=2x&amp;id=dXkd1xqlnOsD&amp;format=png 2x" alt="Listening To Music On Headphones icon" loading="lazy" width="50" height="50" style="filter: invert(0%) sepia(0%) saturate(13%) hue-rotate(305deg) brightness(94%) contrast(98%);">
+        <input id="each" type="text" placeholder="search"; style="margin: 3px" />
+        <button id="search" style="background-color: yellow">Search</button>
+        <button id="logoutBtn" style="background-color: yellow">Logout</button>
+    </div>
+    <h1 style="color: rgb(138, 6, 6); background-color: gray;"><span id="username"></span></h1>
+
+
+    <table id="playlist" style="color:whitesmoke">
+        <tr style="text-align: center;">
+            <th>Song</th>
+            <th>Add</th>
+        </tr>
+    </table>
+
+    <h1 style="color: white">My Favorites</h1>
+    <table id="favorites">
+        <tr>
+            <th style="color: white">Favorites Song</th>
+            <th style="color: white">remove from list</th>
+            <th style="color: white">play</th>
+        </tr>
+    </table>
+
+    <br>
+    <div>
+        <marquee id="musicTitle"></marquee>
+    </div>
+
+    <button id="priv"><img src="prev.png" alt="" width="20px"></button>
+    <button id="next"><img src="next.png" alt="" width="20px"></button>
+    
+    <button id="shuffle" ><img src="shuffle.png" alt="" width="20px"></button>
+    <button id="repeat" style="display:none;"><img src="repeat.png" alt="" width="20px"></button>
+    <br>
+    <audio controls autoplay id="play"></audio>
+
+
+
+</body>
+
+<script src="welcome.js"></script>
+</html>
