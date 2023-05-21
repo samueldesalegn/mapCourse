@@ -73,6 +73,8 @@ function logout() {
   sessionStorage.removeItem("token");
   // location.href = "#";
   document.getElementById("logout").style.display = "none";
+  document.getElementById("user").value = "";
+  document.getElementById("password").value = "";
   document.getElementById("login").style.display = "block";
   document.getElementById("header").style.display = "none";
   document.getElementById("loginForm").style.display = "none";
@@ -367,6 +369,7 @@ repeat.onclick = async function () {
       document.getElementById("musicTitle").innerHTML =
         myFavoriteList[myplayingIndex].title;
     };
+
   }
 };
 
