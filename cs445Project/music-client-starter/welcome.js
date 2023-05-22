@@ -6,6 +6,8 @@ window.onload = function () {
   document.getElementById("search").onclick = function() {
     let song = document.getElementById("elem").value;
     searchSongs(song);
+
+    console.log("Needed to see this: ", document.getElementById("musicTitle").innerHTML);
   };
   
 };

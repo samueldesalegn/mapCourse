@@ -38,7 +38,6 @@ async function login(){
       document.getElementById("main-content").setAttribute ("style", "gap: 1px; display: grid; grid-template-columns: 2fr 1fr ; border: 10px; background-color: gray;");
       document.getElementById("header").innerText = `Welcome to ${result.username} music collections`;
       fetchAllSongs();
-      // addPlaylist();
       
   } else {
       document.getElementById("errorMsg").innerText = "Incorrect username and password";
@@ -71,7 +70,6 @@ for (const elem of result) {
 function logout() {
   sessionStorage.removeItem("username");
   sessionStorage.removeItem("token");
-  // location.href = "#";
   document.getElementById("logout").style.display = "none";
   document.getElementById("user").value = "";
   document.getElementById("password").value = "";
@@ -303,6 +301,7 @@ previous.onclick = async function () {
 };
 
 
+
 //*************************************shuffle*********************************************//
 let repeat = document.getElementById("repeat");
 let shuffle = document.getElementById("shuffle");
@@ -372,6 +371,8 @@ repeat.onclick = async function () {
 
   }
 };
+
+
 
 
 

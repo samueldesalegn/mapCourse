@@ -1,16 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
+
+<html>
+
+ 
+
 <body>
-	<h1>Understanding Javascript</h1>
 
-	<button id="btn">click</button>
+    <button id="myBtn">Try it</button>
 
-	<script src="index.js"></script>
+    <script>
+
+        const myBtn = document.getElementById("myBtn");
+
+        myBtn.addEventListener("click", function(event) {
+
+            console.log(1);
+
+        });
+
+        myBtn.addEventListener("click", function(event) {
+
+            console.log(2);
+
+            event.stopImmediatePropagation();
+
+        });
+
+        myBtn.addEventListener("click", function(event) {
+
+            console.log(3);
+
+        });
+
+    </script>
+
 </body>
+
+ 
+
 </html>
+
