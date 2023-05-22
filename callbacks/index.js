@@ -74,17 +74,25 @@ async function foo() {
 
  
 
-async function bar() {
+// async function bar() {
 
-    console.log('inside bar - start');
+//     console.log('inside bar - start');
 
-    console.log(await foo()); 
+//     console.log(await foo()); 
 
-    console.log('inside bar - end');
+//     console.log('inside bar - end');
 
+// }
+
+// bar();
+
+// console.log('end');
+
+
+function f(a, b) {
+    a(b.length);
 }
 
-bar();
-
-console.log('end');
+f(data => console.log(`First: ${data}`), "Hello");
+f(abc => console.log(`Second: ${abc}`), "Hi");
 

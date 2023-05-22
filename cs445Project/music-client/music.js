@@ -192,7 +192,7 @@ async function playingMusic(music, title, id) {
     document.getElementById("musicTitle").innerHTML =
       generalList[myplayingIndex].title;
   };
-  console.log(myFavoriteList);
+  // console.log(myFavoriteList);
 }
 
 

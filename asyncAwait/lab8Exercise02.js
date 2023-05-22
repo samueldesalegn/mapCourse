@@ -2,7 +2,7 @@ Array.prototype.removeDuplicatesAsync = async function () {
 	let arr = this;
 	
 		// console.log([...new Set(arr)]); 
-		console.log(arr.filter((v, i) => arr.indexOf(v) == i));
+		console.log(await arr.filter((v, i) => arr.indexOf(v) == i));
 
 	
 };
