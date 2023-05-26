@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div">
+		<p id="p">CS445</p>
+		<button id="btn">clickMe</button>
+	</div>
+
+	<script>
+		document.getElementById('div').addEventListener('click', () => console.log("div 1"));
+		document.getElementById('p').addEventListener('click', () => console.log("p"));
+		document.getElementById('btn').addEventListener('click', () => console.log("btn 1"));
+		document.getElementById('btn').addEventListener('click', () => console.log("btn 2"));
+		
+		document.getElementById('div').addEventListener('click', e =>{
+			console.log("div 2");
+			e.stopImmediatePropagation();
+			
+		});
+		
+		document.getElementById('div').addEventListener('click', e =>{
+			console.log("div 3");
+			// e.stopImmediatePropagation();
+			
+		});
+		document.getElementById('btn').addEventListener('click', () => console.log("btn 3"));
+		
+		
+	</script>
+</body>
+</html>

@@ -35,12 +35,13 @@ async function login(){
       document.getElementById("logout").style.display = "block";
       document.getElementById("loginForm").style.display = "block";
       document.getElementById("login").style.display = "none";
+      // document.getElementById("thankyou").innerHTML = "WELCOME TO MY MUSIC WEBSITE";
       document.getElementById("main-content").setAttribute ("style", "gap: 1px; display: grid; grid-template-columns: 2fr 1fr ; border: 10px; background-color: gray;");
       document.getElementById("header").innerText = `Welcome to ${result.username} music collections`;
       fetchAllSongs();
       
   } else {
-      document.getElementById("errorMsg").innerText = "Incorrect username and password";
+      document.getElementById("errorMsg").innerHTML = "Incorrect username and password";
   }
   
 }
@@ -77,6 +78,7 @@ function logout() {
   document.getElementById("header").style.display = "none";
   document.getElementById("loginForm").style.display = "none";
   document.getElementById("thankyou").innerHTML = "THANK YOU FOR WATCHING";
+  document.getElementById("errorMsg").innerHTML = "";
 
 }
 
@@ -97,6 +99,16 @@ async function fetchAllSongs() {
 
 //============================================Display all songs=====================================================================//
 async function displayAllSongs(list) {
+
+  document.getElementById("playlist").innerHTML = "";
+  document.getElementById("playlist").innerHTML = `
+  <tr style="text-align: center;">
+                    <th>Song</th>
+                    <th>Add</th>
+                </tr>
+  `;
+
+  
   for (let elem of list) {
     let response = await fetch(`http://localhost:3000/${elem.urlPath}`, {
       headers: {
@@ -111,7 +123,10 @@ let myHtml = `
         <td><button class="addBtn" id=${elem.id} onclick="addToFavorites('${elem.id}')">+</button></td>
         </tr>
        `;
-      document.getElementById("playlist").innerHTML += myHtml;
+    //  if (elem.title !== document.getElementById("playlist").innerHTML) {
+       
+    // }
+    document.getElementById("playlist").innerHTML += myHtml;
   
   }
 }

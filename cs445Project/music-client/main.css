@@ -37,7 +37,7 @@ table{
 }
 #displayPlay{
     /* margin-top: 25px; */
-    background-color: antiquewhite;
-    background-image: url('background.jpg');
+    background-color: rgb(35, 33, 30);
+    /* background-image: url('background.jpg'); */
     
 }

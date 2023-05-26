@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1 id="title"></h1>
+	<button id="start">Start</button>
+	<button id="end">End</button>
+
+
+	<script>
+
+		document.getElementById('start').onclick = startSetInterval;
+		document.getElementById('end').onclick = stopSetInterval;
+    
+		let timerId;
+		let i = 0;
+		function startSetInterval(){
+			timerId = setInterval(() => {
+				document.getElementById('title').innerHTML = i;
+				i++;
+			}, 1000);
+		}
+
+		function stopSetInterval(){
+      clearInterval(timerId);
+		}
+
+		
+
+	</script>
+</body>
+</html>
